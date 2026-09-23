@@ -4,6 +4,8 @@ format: pdf
 editor: visual
 ---
 
+# Packages
+ 
 ## Question 1
 
 ```{r}
@@ -12,3 +14,13 @@ install.packages("aRtsy")
 ```
 
 Install the `aRtsy` package
+
+## Question 2
+
+```{r}
+library(aRtsy)
+```
+
+The Collatz conjecture starts with any positve integer `n`, if `n` is even, divide it by two; otherwise, multiply it by 3 and add 1. Repeats this process with the new `n` value. Eventually, `n` will reach to 1.
+
+Let $f(n)$ be the next number obtained from $n$: $f(n)=\begin{cases}n/2,&\text{if }n/2 = 0,\\3n+1,&\text{if }n/2 = 1.\end{cases}$
