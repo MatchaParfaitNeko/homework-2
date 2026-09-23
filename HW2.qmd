@@ -1,0 +1,14 @@
+---
+title: "HW-2"
+format: pdf
+editor: visual
+---
+
+## Question 1
+
+```{r}
+#| eval: FALSE
+install.packages("aRtsy")
+```
+
+Install the `aRtsy` package
