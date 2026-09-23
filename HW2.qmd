@@ -24,3 +24,21 @@ library(aRtsy)
 The Collatz conjecture starts with any positve integer `n`, if `n` is even, divide it by two; otherwise, multiply it by 3 and add 1. Repeats this process with the new `n` value. Eventually, `n` will reach to 1.
 
 Let $f(n)$ be the next number obtained from $n$: $f(n)=\begin{cases}n/2,&\text{if }n/2 = 0,\\3n+1,&\text{if }n/2 = 1.\end{cases}$
+
+## Question 3
+
+#### 3.a
+
+```{r}
+set.seed(7)
+canvas_collatz(
+  colors = c("blue"),
+  n = 10
+)
+```
+
+`canvas_collatz()` creates a plot of Collatz sequences using blue lines. `n=10` tells it to choose 10 random starting integers.
+
+#### 3.b
+
+`canvas_collatz()` chooses 10 random starting integers, so it generates a different plot every time we run the code. This is troublesome in `.qmd` file because rendering again could change the plot, making the outcome hard to reproduce and compare. The `set.seed()` sets the same seed before generating random numbers gives the same outcome each time.
