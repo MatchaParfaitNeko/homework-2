@@ -13,7 +13,9 @@ editor: visual
 install.packages("aRtsy")
 ```
 
-Install the `aRtsy` package
+`install.packages()` downloads and installs a package on your computer. `library()` loads an installed package into the current R session.
+
+\newpage
 
 ## Question 2
 
@@ -21,9 +23,11 @@ Install the `aRtsy` package
 library(aRtsy)
 ```
 
-The Collatz conjecture starts with any positve integer `n`, if `n` is even, divide it by two; otherwise, multiply it by 3 and add 1. Repeats this process with the new `n` value. Eventually, `n` will reach to 1.
+The Collatz conjecture starts with any postive integer `n`, if `n` is even, divide it by two; otherwise, multiply it by 3 and add 1. Repeats this process with the new `n` value. Eventually, `n` will reach to 1.
 
 Let $f(n)$ be the next number obtained from $n$: $f(n)=\begin{cases}n/2,&\text{if }n/2 = 0,\\3n+1,&\text{if }n/2 = 1.\end{cases}$
+
+\newpage
 
 ## Question 3
 
@@ -37,8 +41,21 @@ canvas_collatz(
 )
 ```
 
-`canvas_collatz()` creates a plot of Collatz sequences using blue lines. `n=10` tells it to choose 10 random starting integers.
+`canvas_collatz()` creates a plot of Collatz sequences using blue lines. `n = 10` tells it to choose 10 random starting integers.
 
 #### 3.b
 
 `canvas_collatz()` chooses 10 random starting integers, so it generates a different plot every time we run the code. This is troublesome in `.qmd` file because rendering again could change the plot, making the outcome hard to reproduce and compare. The `set.seed()` sets the same seed before generating random numbers gives the same outcome each time.
+
+\newpage
+
+## Question 4
+
+```{r}
+canvas_collatz(
+  colors = c("blue"),
+  n = 1:20
+)
+```
+
+In question 3, `n = 10` tells `canvas_collatz()` to choose 10 random starting numbers. In question 4, we use a vector `n = 1:20`, which tells it to use the number 1 to 20 as staring numbers. This argument makes `canvas_collatz()` to generate the same plot each time we render. Since the staring numbers are fixed, including `set.seed()` is unnecessary: the seed would not change this plot.
